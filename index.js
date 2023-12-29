@@ -116,8 +116,21 @@ app.post('/webhook', express.raw({type: 'application/json'}), (request, response
   response.send();
 });
 
-app.listen(4242, () =>{ 
-    console.log('Running on port 4242');
+const hostname = '65.2.9.145';
+const port = 3000;
 
-    getTransactions();
+const server = http.createServer((request,response)=>{
+    response.statusCode = 200;
+    response.setHeader('Content-Type', 'text/plain');
+    response.end('Welcome!');
 });
+
+server.listen(port, hostname, ()=>{
+    console.log(`Server running at http://${hostname}:${port}/`);
+});
+
+// app.listen(4242, () =>{ 
+//     console.log('Running on port 4242');
+
+//     getTransactions();
+// });
