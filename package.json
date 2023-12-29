@@ -1,0 +1,25 @@
+{
+  "name": "car_pooling",
+  "version": "1.0.0",
+  "description": "apis for car pooling ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zayn1k98/car-pooling-apis.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zayn1k98/car-pooling-apis/issues"
+  },
+  "homepage": "https://github.com/zayn1k98/car-pooling-apis#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "firebase-admin": "^12.0.0",
+    "http": "^0.0.1-security",
+    "stripe": "^14.10.0"
+  }
+}
