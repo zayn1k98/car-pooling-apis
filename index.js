@@ -40,6 +40,21 @@ async function getTransactions(){
         console.log(doc.id, '=>', doc.data());
     });
 }
+
+const http = require('http');
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = http.createServer((request,response)=>{
+    response.statusCode = 200;
+    response.setHeader('Content-Type', 'text/plain');
+    response.end('Welcome!');
+});
+
+server.listen(port, hostname, ()=>{
+    console.log(`Server running at http://${hostname}:${port}/`);
+});
 // server.js
 //
 // Use this sample code to handle webhook events in your integration.
@@ -114,21 +129,6 @@ app.post('/webhook', express.raw({type: 'application/json'}), (request, response
 
   // Return a 200 response to acknowledge receipt of the event
   response.send();
-});
-
-const http = require('http');
-
-const hostname = '65.2.9.145';
-const port = 3000;
-
-const server = http.createServer((request,response)=>{
-    response.statusCode = 200;
-    response.setHeader('Content-Type', 'text/plain');
-    response.end('Welcome!');
-});
-
-server.listen(port, hostname, ()=>{
-    console.log(`Server running at http://${hostname}:${port}/`);
 });
 
 // app.listen(4242, () =>{ 
