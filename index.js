@@ -11,9 +11,14 @@ const githubAccessKey = "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";
 
 const http = require('http');
 
+
+app.get('/',(request, response)=>{
+    response.send('Welcome!');
+
 const options = {
     hostname :'65.2.9.145',
-    path:'/home',
+    port:'80',
+    path:'/',
     method:'GET',
 };
 
@@ -34,10 +39,6 @@ const req = http.request(options, (response)=>{
 
     req.end();
 });
-
-
-app.get('/',(request, response)=>{
-    response.send('Welcome!');
 });
 
 initializeApp({
