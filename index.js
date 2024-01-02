@@ -7,16 +7,12 @@ const { getFirestore, Timestamp, FieldValue, Filter } = require('firebase-admin/
 const serviceAccount = require("./carpooling-a5e4c-167f44a9691b.json");
 const { database } = require('firebase-admin');
 
-const githubAccessKey = "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";
+const githubAccessKey = "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";
 
 const http = require('http');
 
-
-app.get('/',(request, response)=>{
-    response.send('Welcome!');
-
 const options = {
-    hostname :'65.2.9.145',
+    hostname :'172.31.44.89',
     port:'80',
     path:'/',
     method:'GET',
@@ -39,6 +35,10 @@ const req = http.request(options, (response)=>{
 
     req.end();
 });
+
+
+app.get('/',(request, response)=>{
+    response.send('Welcome!');
 });
 
 initializeApp({
