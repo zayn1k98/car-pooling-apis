@@ -17,10 +17,10 @@ const { database } = require('firebase-admin');
 //     credential: cert(serviceAccount)
 // });
 
-// app.listen(3000,()=>{
-//     console.log("NODE APP IS RUNNING ...");
-//     console.log('Trying to ping http request');
-// });
+app.listen(3000,()=>{
+    console.log("NODE APP IS RUNNING ...");
+    console.log('Trying to ping http request');
+});
 
 const http = require('http');
 
