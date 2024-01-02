@@ -30,6 +30,8 @@ const options = {
     method:'GET',
 };
 
+console.log('trying to ping http server');
+
 const req = http.request(options, (response)=>{
     console.log('We are pinging the http request');
     let data = '';
