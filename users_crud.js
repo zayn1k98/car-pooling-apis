@@ -28,28 +28,27 @@ async function getDrivers (){
 
     usersList = list;
 
-  users = {'data':JSON.stringify(usersList)};
-  const allUsers = JSON.stringify(users);
+    const allUsers = {'data':usersList};
 
   return allUsers;
 }
 
 async function addDriver(driverDetails){
-    await db.collection('drivers').doc(driverDetails['phoneNumber']).set(driverDetails);
+    await db.collection('drivers').doc(driverDetails['phone_number']).set(driverDetails);
 
     console.log(`DRIVER ADDED SUCCESSFULLY : ${driverDetails.toString()}`);
 }
 
 async function approveDriver(driverDetails){
-    await db.collection('drivers').doc(driverDetails['phoneNumber']).update({
-        'isDriverApproved':driverDetails['isDriverApproved'],
+    await db.collection('drivers').doc(driverDetails['phone_number']).update({
+        'isApproved':true,
     });
 
     console.log(`DRIVER DETAILS MODIFIED SUCCESSFULLY !`);
 }
 
-async function deleteDriver(driverDetails){
-    await db.collection('drivers').doc(driverDetails).delete();
+async function deleteDriver(driverPhoneNumber){
+    await db.collection('drivers').doc(driverPhoneNumber).delete();
 
     console.log("DRIVER DELETED SUCCESSFULLY !");
 }
